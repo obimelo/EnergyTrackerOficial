@@ -62,12 +62,12 @@ cd energyTracker
 
 2. Build the Docker container:
 ```
-docker build -t energyTracker .
+docker build -t energytracker .
 ````
 
 3.Start the Docker container:
 ```
-docker run -p 5000:5000 -p 8000:80 energyTracker
+docker run --rm -p 5000:5000 -p 8000:80 energytracker
 ```
 
 4.Access the application in your browser at http://localhost:8000.

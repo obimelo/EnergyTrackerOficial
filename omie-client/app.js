@@ -2,7 +2,7 @@
 var CONFIG = {
                 'api_url': '',  
                 'tariff': 'Tri-Horario-Semanal',    
-                'year': '2023',   
+                'year': '2024',   
                 'curva_perfil_c': "True",
                 'supplier': 'coopernico-base',                  
                 'chart_update_interval': 15,    // 15 minute default

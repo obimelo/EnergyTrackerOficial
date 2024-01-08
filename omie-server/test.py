@@ -16,14 +16,14 @@ if os.path.exists(omie_data_path):
 else:
     BASE_PATH = os.path.dirname(currentDir.rstrip('/'))
 
-OMIE_PATH       = os.path.join(BASE_PATH, 'OMIE_Data/')
-CONSUMOS_PATH   = os.path.join(BASE_PATH, 'Consumos/')
-EREDES_PATH     = os.path.join(BASE_PATH, 'ERedes_profiles/')
-GLOBAL_PROFILE_FILE = os.path.join(EREDES_PATH, 'ERSE_perfis_de_consumo_2023_especial.xlsx')
-LOSS_PROFILE_FILE   = os.path.join(EREDES_PATH, 'E-REDES_Perfil_Perdas_2023_mod.xlsx')
+OMIE_PATH           = os.path.join(BASE_PATH, 'OMIE_Data/')
+CONSUMOS_PATH       = os.path.join(BASE_PATH, 'Consumos/')
+EREDES_PATH         = os.path.join(BASE_PATH, 'ERedes_profiles/')
+GLOBAL_PROFILE_FILE = os.path.join(EREDES_PATH, 'E-REDES_Perfil_Consumo_Injecao_2024.xlsx')
+LOSS_PROFILE_FILE   = os.path.join(EREDES_PATH, 'Perfis_Perdas_E-REDES_2024_0.xlsx')
 
 data_ingest = DataIngestion(BASE_PATH, OMIE_PATH, EREDES_PATH, GLOBAL_PROFILE_FILE, LOSS_PROFILE_FILE )
-energy_cost = EnergyCosts('Tri-Horario-Semanal', 2023, 'luzboa-spot', 1, 'BTN-C' )
+energy_cost = EnergyCosts('Bi-Horario-Semanal', 2024, 'coopernico-base', 1, 'BTN-C' )
 
 
 # Get a specific value from the DataFrame
@@ -63,8 +63,8 @@ energy_cost = EnergyCosts('Tri-Horario-Semanal', 2023, 'luzboa-spot', 1, 'BTN-C'
 
 
 # test
-start_date  = datetime.datetime( 2023, 3, 10, 0,0,0)
-end_date    = datetime.datetime( 2023, 4, 2, 23, 59, 59)
+start_date  = datetime.datetime( 2024, 1, 1, 0,0,0)
+end_date    = datetime.datetime( 2024, 1, 5, 23, 59, 59)
 
 #data = energy_cost.get_omie_price_average_for_period (energy_cost.omie_data, energy_cost.loss_profile_data, start_date, end_date, lagHour=1)
 #per_loss = self.get_loss_profile_for_period (loss_profile_data, start_date, end_date)

@@ -90,7 +90,7 @@ class DataIngestion():
     loss_data_file = 'loss_data.feather'
 
 
-    def __init__(self, base_folder, omie_folder = '../OMIE_Data/', eredes_folder='../ERedes_profiles/', consumption_profile_data='../ERedes_profiles/E-REDES_Perfil_Consumo_2023_mod.xlsx', loss_profile_data='../ERedes_profiles/E-REDES_Perfil_Perdas_2023_mod.xlsx'):
+    def __init__(self, base_folder, omie_folder = '../OMIE_Data/', eredes_folder='../ERedes_profiles/', consumption_profile_data='../ERedes_profiles/E-E-REDES_Perfil_Consumo_Injecao_2024.xlsx', loss_profile_data='../ERedes_profiles/E-Perfis_Perdas_E-REDES_2024_0.xlsx'):
         setBasePath(base_folder)
         self.logger = setup_logger('DataIngestion')
         self.hashesManager = FilesHashes(omie_folder)
@@ -332,7 +332,6 @@ class DataIngestion():
         return df
     
     def load_EREDES_GlobalProfiles (self, filename):
-        # ERSE_perfis_de_consumo_2023_especial.xlsx
         # Load the E-Redes Consumption Profiles
 
         # check if feather file exists
@@ -345,11 +344,11 @@ class DataIngestion():
         # Load the E-Redes Consumption Profiles if the Feather file does not exist
         self.logger.info (f'Loading E-Redes Consumption Profile file= {filename}')
 
-        df = pd.read_excel(filename, sheet_name='2023', skiprows=7, header=None)
-        df.columns = ['Data', 'Dia', 'Hora', 'RESP', 'BTN-A', 'BTN-B', 'BTN-C', 'IP', 'mP', 'UPAC-A-CV-Consumo', 'UPAC-A-CV-Injecao', 'UPAC-B-CV-Consumo', 'UPAC-B-CV-Injecao', 'UPAC-C-CV-Consumo', 'UPAC-C-CV-Injecao', 'UPAC-A-Consumo', 'UPAC-B-Consumo', 'UPAC-C-Consumo']
+        df = pd.read_excel(filename, sheet_name='2024', skiprows=4, header=None)
+        df.columns = ['Data', 'Dia', 'Hora', 'BTN-A', 'BTN-B', 'BTN-C', 'IP', 'mP', 'UPAC-A-CV-Consumo', 'UPAC-A-CV-Injecao', 'UPAC-B-CV-Consumo', 'UPAC-B-CV-Injecao', 'UPAC-C-CV-Consumo', 'UPAC-C-CV-Injecao', 'UPAC-A-Consumo', 'UPAC-B-Consumo', 'UPAC-C-Consumo']
 
         # Convert the columns to numeric values
-        df[['RESP', 'BTN-A', 'BTN-B', 'BTN-C', 'IP', 'mP', 'UPAC-A-CV-Consumo', 'UPAC-A-CV-Injecao', 'UPAC-B-CV-Consumo', 'UPAC-B-CV-Injecao', 'UPAC-C-CV-Consumo', 'UPAC-C-CV-Injecao', 'UPAC-A-Consumo', 'UPAC-B-Consumo', 'UPAC-C-Consumo']] = df[['RESP', 'BTN-A', 'BTN-B', 'BTN-C', 'IP', 'mP', 'UPAC-A-CV-Consumo', 'UPAC-A-CV-Injecao', 'UPAC-B-CV-Consumo', 'UPAC-B-CV-Injecao', 'UPAC-C-CV-Consumo', 'UPAC-C-CV-Injecao', 'UPAC-A-Consumo', 'UPAC-B-Consumo', 'UPAC-C-Consumo']].apply(pd.to_numeric)
+        df[['BTN-A', 'BTN-B', 'BTN-C', 'IP', 'mP', 'UPAC-A-CV-Consumo', 'UPAC-A-CV-Injecao', 'UPAC-B-CV-Consumo', 'UPAC-B-CV-Injecao', 'UPAC-C-CV-Consumo', 'UPAC-C-CV-Injecao', 'UPAC-A-Consumo', 'UPAC-B-Consumo', 'UPAC-C-Consumo']] = df[['BTN-A', 'BTN-B', 'BTN-C', 'IP', 'mP', 'UPAC-A-CV-Consumo', 'UPAC-A-CV-Injecao', 'UPAC-B-CV-Consumo', 'UPAC-B-CV-Injecao', 'UPAC-C-CV-Consumo', 'UPAC-C-CV-Injecao', 'UPAC-A-Consumo', 'UPAC-B-Consumo', 'UPAC-C-Consumo']].apply(pd.to_numeric)
 
         # Convert the 'Hora' column to the 'hh:mm:ss' format
         df['Hora'] = pd.to_timedelta( df['Hora'].apply(self.hourMinuteToHHMMSSFormatCondition) )
@@ -365,7 +364,7 @@ class DataIngestion():
         df = df.sort_index()
 
         # Drop the unnecessary columns
-        df.drop(columns=['Data', 'Dia', 'Hora', 'RESP'], inplace=True)
+        df.drop(columns=['Data', 'Dia', 'Hora'], inplace=True)
 
         # Save the data to a Feather file
         df.reset_index().to_feather(self.profiles_data_file)
@@ -384,11 +383,11 @@ class DataIngestion():
 
         # Load the E-Redes Loss Profile if the Feather file does not exist
         self.logger.info (f'Loading E-Redes Losses Profile file= {filename}')
-        df = pd.read_excel(filename, sheet_name='Perfis Perdas 2023', skiprows=3, header=None)
-        df.columns = ['Data', 'Dia', 'Hora', 'BT', 'MT', 'AT', 'ATRNT', 'MAT']
+        df = pd.read_excel(filename, sheet_name='Perfis Perdas 2024', skiprows=3, header=None)
+        df.columns = ['Data', 'Dia', 'Hora', 'BT', 'MT', 'AT']
 
         # Convert the columns to numeric values
-        df[['BT', 'MT', 'AT', 'ATRNT', 'MAT']] = df[['BT', 'MT', 'AT', 'ATRNT', 'MAT']].apply(pd.to_numeric)
+        df[['BT', 'MT', 'AT']] = df[['BT', 'MT', 'AT']].apply(pd.to_numeric)
 
         # Convert the 'Hora' column to the 'hh:mm:ss' format
         df['Hora'] = pd.to_timedelta( df['Hora'].apply(self.hourMinuteToHHMMSSFormatCondition) )

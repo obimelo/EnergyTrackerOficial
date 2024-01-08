@@ -9,139 +9,139 @@ from logger_config import setup_logger, setBasePath
 #######   TEMPLATE DE CUSTOS DE ENERGIA   #######
 Energy_Time_Cycle = {
     'Simples': [
-        {'dst':1, 'dias':0, 'start': '00:00', 'end': '23:59', 'tar': -0.0958, 'periodo':'Cheio'}, # Seg a Sexta 
-        {'dst':1, 'dias':1, 'start': '00:00', 'end': '23:59', 'tar': -0.0958, 'periodo':'Cheio'}, # Sábado
-        {'dst':1, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': -0.0958, 'periodo':'Cheio'}, # Domingo
+        {'dst':1, 'dias':0, 'start': '00:00', 'end': '23:59', 'tar': 0.0365, 'periodo':'Cheio'}, # Seg a Sexta 
+        {'dst':1, 'dias':1, 'start': '00:00', 'end': '23:59', 'tar': 0.0365, 'periodo':'Cheio'}, # Sábado
+        {'dst':1, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': 0.0365, 'periodo':'Cheio'}, # Domingo
 
-        {'dst':0, 'dias':0, 'start': '00:00', 'end': '23:59', 'tar': -0.0958, 'periodo':'Cheio'}, # Seg a Sexta 
-        {'dst':0, 'dias':1, 'start': '00:00', 'end': '23:59', 'tar': -0.0958, 'periodo':'Cheio'}, # Sábado
-        {'dst':0, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': -0.0958, 'periodo':'Cheio'}, # Domingo
+        {'dst':0, 'dias':0, 'start': '00:00', 'end': '23:59', 'tar': 0.0365, 'periodo':'Cheio'}, # Seg a Sexta 
+        {'dst':0, 'dias':1, 'start': '00:00', 'end': '23:59', 'tar': 0.0365, 'periodo':'Cheio'}, # Sábado
+        {'dst':0, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': 0.0365, 'periodo':'Cheio'}, # Domingo
     ],
     'Bi-Horario-Semanal': [
-        {'dst':1, 'dias':0, 'start': '00:00', 'end': '06:59', 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
-        {'dst':1, 'dias':0, 'start': '07:00', 'end': '23:59', 'periodo':'Cheio'}, # Seg a Sexta em Fora de Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '00:00', 'end': '08:59', 'periodo':'Vazio'}, # Sábado em Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '09:00', 'end': '13:59', 'periodo':'Cheio'}, # Sábado em Fora Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '14:00', 'end': '19:59', 'periodo':'Vazio'}, # Sábado em Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '20:00', 'end': '21:59', 'periodo':'Cheio'}, # Sábado em Fora Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '22:00', 'end': '23:59', 'periodo':'Vazio'}, # Sábado em Vazio no Verão
-        {'dst':1, 'dias':2, 'start': '00:00', 'end': '23:59', 'periodo':'Vazio'}, # Domingo em Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '00:00', 'end': '06:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '07:00', 'end': '23:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Seg a Sexta em Fora de Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '00:00', 'end': '08:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '09:00', 'end': '13:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Sábado em Fora Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '14:00', 'end': '19:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '20:00', 'end': '21:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Sábado em Fora Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
+        {'dst':1, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
 
-        {'dst':0, 'dias':0, 'start': '00:00', 'end': '06:59', 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
-        {'dst':0, 'dias':0, 'start': '07:00', 'end': '23:59', 'periodo':'Cheio'}, # Seg a Sexta em Fora de Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '00:00', 'end': '09:29', 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '09:30', 'end': '12:59', 'periodo':'Cheio'}, # Sábado em Fora Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '13:00', 'end': '18:29', 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '18:30', 'end': '21:59', 'periodo':'Cheio'}, # Sábado em Fora Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '22:00', 'end': '23:59', 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
-        {'dst':0, 'dias':2, 'start': '00:00', 'end': '23:59', 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '00:00', 'end': '06:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '07:00', 'end': '23:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Seg a Sexta em Fora de Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '00:00', 'end': '09:29', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '09:30', 'end': '12:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Sábado em Fora Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '13:00', 'end': '18:29', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '18:30', 'end': '21:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Sábado em Fora Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
+        {'dst':0, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
     ],
     'Bi-Horario-Diario': [
-        {'dst':1, 'dias':0, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
-        {'dst':1, 'dias':0, 'start': '08:00', 'end': '21:59', 'tar': -0.0842, 'periodo':'Cheio'}, # Seg a Sexta em Fora de Vazio no Verão
-        {'dst':1, 'dias':0, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '08:00', 'end': '21:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Seg a Sexta em Fora de Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
 
-        {'dst':1, 'dias':1, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '08:00', 'end': '21:59', 'tar': -0.0842, 'periodo':'Cheio'}, # Sábado em Fora de Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '08:00', 'end': '21:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Sábado em Fora de Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
 
-        {'dst':1, 'dias':2, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
-        {'dst':1, 'dias':2, 'start': '08:00', 'end': '21:59', 'tar': -0.0842, 'periodo':'Cheio'}, # Domingo em Fora de Vazio no Verão
-        {'dst':1, 'dias':2, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
+        {'dst':1, 'dias':2, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
+        {'dst':1, 'dias':2, 'start': '08:00', 'end': '21:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Domingo em Fora de Vazio no Verão
+        {'dst':1, 'dias':2, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
 
-        {'dst':0, 'dias':0, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
-        {'dst':0, 'dias':0, 'start': '08:00', 'end': '21:59', 'tar': -0.0842, 'periodo':'Cheio'}, # Seg a Sexta em Fora de Vazio no Inverno
-        {'dst':0, 'dias':0, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '08:00', 'end': '21:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Seg a Sexta em Fora de Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
 
-        {'dst':0, 'dias':1, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '08:00', 'end': '21:59', 'tar': -0.0842, 'periodo':'Cheio'}, # Sábado em Fora de Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '08:00', 'end': '21:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Sábado em Fora de Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
 
-        {'dst':0, 'dias':2, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
-        {'dst':0, 'dias':2, 'start': '08:00', 'end': '21:59', 'tar': -0.0842, 'periodo':'Cheio'}, # Domingo em Fora de Vazio no Inverno
-        {'dst':0, 'dias':2, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
+        {'dst':0, 'dias':2, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
+        {'dst':0, 'dias':2, 'start': '08:00', 'end': '21:59', 'tar': 0.0502, 'periodo':'Cheio'}, # Domingo em Fora de Vazio no Inverno
+        {'dst':0, 'dias':2, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
     ],
     'Tri-Horario-Semanal': [
-        {'dst':1, 'dias':0, 'start': '00:00', 'end': '06:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
-        {'dst':1, 'dias':0, 'start': '07:00', 'end': '09:14', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
-        {'dst':1, 'dias':0, 'start': '09:15', 'end': '12:14', 'tar': -0.0018, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Verão
-        {'dst':1, 'dias':0, 'start': '12:15', 'end': '23:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
-        {'dst':1, 'dias':1, 'start': '00:00', 'end': '08:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '09:00', 'end': '13:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Sábado em Cheio no Verão
-        {'dst':1, 'dias':1, 'start': '14:00', 'end': '19:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '20:00', 'end': '21:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Sábado em Cheio no Verão
-        {'dst':1, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
-        {'dst':1, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '00:00', 'end': '06:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '07:00', 'end': '09:14', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
+        {'dst':1, 'dias':0, 'start': '09:15', 'end': '12:14', 'tar': 0.1511, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Verão
+        {'dst':1, 'dias':0, 'start': '12:15', 'end': '23:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
+        {'dst':1, 'dias':1, 'start': '00:00', 'end': '08:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '09:00', 'end': '13:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Sábado em Cheio no Verão
+        {'dst':1, 'dias':1, 'start': '14:00', 'end': '19:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '20:00', 'end': '21:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Sábado em Cheio no Verão
+        {'dst':1, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Verão
+        {'dst':1, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
 
-        {'dst':0, 'dias':0, 'start': '00:00', 'end': '06:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
-        {'dst':0, 'dias':0, 'start': '07:00', 'end': '09:29', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
-        {'dst':0, 'dias':0, 'start': '09:30', 'end': '11:59', 'tar': -0.0018, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Inverno
-        {'dst':0, 'dias':0, 'start': '12:00', 'end': '18:29', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
-        {'dst':0, 'dias':0, 'start': '18:30', 'end': '20:59', 'tar': -0.0018, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Inverno
-        {'dst':0, 'dias':0, 'start': '21:00', 'end': '23:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
-        {'dst':0, 'dias':1, 'start': '00:00', 'end': '09:29', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '09:30', 'end': '12:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Sábado em Cheio no Inverno
-        {'dst':0, 'dias':1, 'start': '13:00', 'end': '18:29', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '18:30', 'end': '21:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Sábado em Cheio no Inverno
-        {'dst':0, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
-        {'dst':0, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '00:00', 'end': '06:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '07:00', 'end': '09:29', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
+        {'dst':0, 'dias':0, 'start': '09:30', 'end': '11:59', 'tar': 0.1511, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Inverno
+        {'dst':0, 'dias':0, 'start': '12:00', 'end': '18:29', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
+        {'dst':0, 'dias':0, 'start': '18:30', 'end': '20:59', 'tar': 0.1511, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Inverno
+        {'dst':0, 'dias':0, 'start': '21:00', 'end': '23:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
+        {'dst':0, 'dias':1, 'start': '00:00', 'end': '09:29', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '09:30', 'end': '12:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Sábado em Cheio no Inverno
+        {'dst':0, 'dias':1, 'start': '13:00', 'end': '18:29', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '18:30', 'end': '21:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Sábado em Cheio no Inverno
+        {'dst':0, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sábado em Vazio no Inverno
+        {'dst':0, 'dias':2, 'start': '00:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
     ],
     'Tri-Horario-Diario': [
-        {'dst':1, 'dias':0, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
-        {'dst':1, 'dias':0, 'start': '08:00', 'end': '10:29', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
-        {'dst':1, 'dias':0, 'start': '10:30', 'end': '12:59', 'tar': -0.0018, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Verão
-        {'dst':1, 'dias':0, 'start': '13:00', 'end': '19:29', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
-        {'dst':1, 'dias':0, 'start': '19:30', 'end': '20:59', 'tar': -0.0018, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Verão
-        {'dst':1, 'dias':0, 'start': '21:00', 'end': '21:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
-        {'dst':1, 'dias':0, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
+        {'dst':1, 'dias':0, 'start': '08:00', 'end': '10:29', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
+        {'dst':1, 'dias':0, 'start': '10:30', 'end': '12:59', 'tar': 0.1511, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Verão
+        {'dst':1, 'dias':0, 'start': '13:00', 'end': '19:29', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
+        {'dst':1, 'dias':0, 'start': '19:30', 'end': '20:59', 'tar': 0.1511, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Verão
+        {'dst':1, 'dias':0, 'start': '21:00', 'end': '21:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Verão
+        {'dst':1, 'dias':0, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Verão
 
-        {'dst':1, 'dias':1, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sabado em Vazio no Verão
-        {'dst':1, 'dias':1, 'start': '08:00', 'end': '10:29', 'tar': -0.1069, 'periodo':'Cheio'}, # Sabado em Cheio no Verão
-        {'dst':1, 'dias':1, 'start': '10:30', 'end': '12:59', 'tar': -0.0018, 'periodo':'Ponta'}, # Sabado em Ponta no Verão
-        {'dst':1, 'dias':1, 'start': '13:00', 'end': '19:29', 'tar': -0.1069, 'periodo':'Cheio'}, # Sabado em Cheio no Verão
-        {'dst':1, 'dias':1, 'start': '19:30', 'end': '20:59', 'tar': -0.0018, 'periodo':'Ponta'}, # Sabado em Ponta no Verão
-        {'dst':1, 'dias':1, 'start': '21:00', 'end': '21:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Sabado em Cheio no Verão
-        {'dst':1, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sabado em Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sabado em Vazio no Verão
+        {'dst':1, 'dias':1, 'start': '08:00', 'end': '10:29', 'tar': 0.0237, 'periodo':'Cheio'}, # Sabado em Cheio no Verão
+        {'dst':1, 'dias':1, 'start': '10:30', 'end': '12:59', 'tar': 0.1511, 'periodo':'Ponta'}, # Sabado em Ponta no Verão
+        {'dst':1, 'dias':1, 'start': '13:00', 'end': '19:29', 'tar': 0.0237, 'periodo':'Cheio'}, # Sabado em Cheio no Verão
+        {'dst':1, 'dias':1, 'start': '19:30', 'end': '20:59', 'tar': 0.1511, 'periodo':'Ponta'}, # Sabado em Ponta no Verão
+        {'dst':1, 'dias':1, 'start': '21:00', 'end': '21:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Sabado em Cheio no Verão
+        {'dst':1, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sabado em Vazio no Verão
 
-        {'dst':1, 'dias':2, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
-        {'dst':1, 'dias':2, 'start': '08:00', 'end': '10:29', 'tar': -0.1069, 'periodo':'Cheio'}, # Domingo em Cheio no Verão
-        {'dst':1, 'dias':2, 'start': '10:30', 'end': '12:59', 'tar': -0.0018, 'periodo':'Ponta'}, # Domingo em Ponta no Verão
-        {'dst':1, 'dias':2, 'start': '13:00', 'end': '19:29', 'tar': -0.1069, 'periodo':'Cheio'}, # Domingo em Cheio no Verão
-        {'dst':1, 'dias':2, 'start': '19:30', 'end': '20:59', 'tar': -0.0018, 'periodo':'Ponta'}, # Domingo em Ponta no Verão
-        {'dst':1, 'dias':2, 'start': '21:00', 'end': '21:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Domingo em Cheio no Verão
-        {'dst':1, 'dias':2, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
+        {'dst':1, 'dias':2, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
+        {'dst':1, 'dias':2, 'start': '08:00', 'end': '10:29', 'tar': 0.0237, 'periodo':'Cheio'}, # Domingo em Cheio no Verão
+        {'dst':1, 'dias':2, 'start': '10:30', 'end': '12:59', 'tar': 0.1511, 'periodo':'Ponta'}, # Domingo em Ponta no Verão
+        {'dst':1, 'dias':2, 'start': '13:00', 'end': '19:29', 'tar': 0.0237, 'periodo':'Cheio'}, # Domingo em Cheio no Verão
+        {'dst':1, 'dias':2, 'start': '19:30', 'end': '20:59', 'tar': 0.1511, 'periodo':'Ponta'}, # Domingo em Ponta no Verão
+        {'dst':1, 'dias':2, 'start': '21:00', 'end': '21:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Domingo em Cheio no Verão
+        {'dst':1, 'dias':2, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Verão
 
-        {'dst':0, 'dias':0, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
-        {'dst':0, 'dias':0, 'start': '08:00', 'end': '08:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
-        {'dst':0, 'dias':0, 'start': '09:00', 'end': '10:29', 'tar': -0.0018, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Inverno
-        {'dst':0, 'dias':0, 'start': '10:30', 'end': '17:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
-        {'dst':0, 'dias':0, 'start': '18:00', 'end': '20:29', 'tar': -0.0018, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Inverno
-        {'dst':0, 'dias':0, 'start': '20:30', 'end': '21:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
-        {'dst':0, 'dias':0, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
+        {'dst':0, 'dias':0, 'start': '08:00', 'end': '08:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
+        {'dst':0, 'dias':0, 'start': '09:00', 'end': '10:29', 'tar': 0.1511, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Inverno
+        {'dst':0, 'dias':0, 'start': '10:30', 'end': '17:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
+        {'dst':0, 'dias':0, 'start': '18:00', 'end': '20:29', 'tar': 0.1511, 'periodo':'Ponta'}, # Seg a Sexta em Ponta no Inverno
+        {'dst':0, 'dias':0, 'start': '20:30', 'end': '21:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Seg a Sexta em Cheio no Inverno
+        {'dst':0, 'dias':0, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Seg a Sexta em Vazio no Inverno
 
-        {'dst':0, 'dias':1, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sabado em Vazio no Inverno
-        {'dst':0, 'dias':1, 'start': '08:00', 'end': '08:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Sabado em Cheio no Inverno
-        {'dst':0, 'dias':1, 'start': '09:00', 'end': '10:29', 'tar': -0.0018, 'periodo':'Ponta'}, # Sabado em Ponta no Inverno
-        {'dst':0, 'dias':1, 'start': '10:30', 'end': '17:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Sabado em Cheio no Inverno
-        {'dst':0, 'dias':1, 'start': '18:00', 'end': '20:29', 'tar': -0.0018, 'periodo':'Ponta'}, # Sabado em Ponta no Inverno
-        {'dst':0, 'dias':1, 'start': '20:30', 'end': '21:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Sabado em Cheio no Inverno
-        {'dst':0, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Sabado em Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sabado em Vazio no Inverno
+        {'dst':0, 'dias':1, 'start': '08:00', 'end': '08:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Sabado em Cheio no Inverno
+        {'dst':0, 'dias':1, 'start': '09:00', 'end': '10:29', 'tar': 0.1511, 'periodo':'Ponta'}, # Sabado em Ponta no Inverno
+        {'dst':0, 'dias':1, 'start': '10:30', 'end': '17:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Sabado em Cheio no Inverno
+        {'dst':0, 'dias':1, 'start': '18:00', 'end': '20:29', 'tar': 0.1511, 'periodo':'Ponta'}, # Sabado em Ponta no Inverno
+        {'dst':0, 'dias':1, 'start': '20:30', 'end': '21:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Sabado em Cheio no Inverno
+        {'dst':0, 'dias':1, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Sabado em Vazio no Inverno
 
-        {'dst':0, 'dias':2, 'start': '00:00', 'end': '07:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
-        {'dst':0, 'dias':2, 'start': '08:00', 'end': '08:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Domingo em Cheio no Inverno
-        {'dst':0, 'dias':2, 'start': '09:00', 'end': '10:29', 'tar': -0.0018, 'periodo':'Ponta'}, # Domingo em Ponta no Inverno
-        {'dst':0, 'dias':2, 'start': '10:30', 'end': '17:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Domingo em Cheio no Inverno
-        {'dst':0, 'dias':2, 'start': '18:00', 'end': '20:29', 'tar': -0.0018, 'periodo':'Ponta'}, # Domingo em Ponta no Inverno
-        {'dst':0, 'dias':2, 'start': '20:30', 'end': '21:59', 'tar': -0.1069, 'periodo':'Cheio'}, # Domingo em Cheio no Inverno
-        {'dst':0, 'dias':2, 'start': '22:00', 'end': '23:59', 'tar': -0.1185, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
-
+        {'dst':0, 'dias':2, 'start': '00:00', 'end': '07:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
+        {'dst':0, 'dias':2, 'start': '08:00', 'end': '08:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Domingo em Cheio no Inverno
+        {'dst':0, 'dias':2, 'start': '09:00', 'end': '10:29', 'tar': 0.1511, 'periodo':'Ponta'}, # Domingo em Ponta no Inverno
+        {'dst':0, 'dias':2, 'start': '10:30', 'end': '17:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Domingo em Cheio no Inverno
+        {'dst':0, 'dias':2, 'start': '18:00', 'end': '20:29', 'tar': 0.1511, 'periodo':'Ponta'}, # Domingo em Ponta no Inverno
+        {'dst':0, 'dias':2, 'start': '20:30', 'end': '21:59', 'tar': 0.0237, 'periodo':'Cheio'}, # Domingo em Cheio no Inverno
+        {'dst':0, 'dias':2, 'start': '22:00', 'end': '23:59', 'tar': 0.0092, 'periodo':'Vazio'}, # Domingo em Vazio no Inverno
     ]
 }
 
 ###### TARIFAS ######
-ENERGY_TAR_PERIODS = [ 
-    {'start': '2023-01-01', 'end': '2023-06-30', 'Simples': -0.0958, 'Bi-Horario': {'Vazio':-0.1185, 'Cheio': -0.0842}, 'Tri-Horario': {'Vazio':-0.1185, 'Cheio':-0.1069, 'Ponta':-0.0018} },
-    {'start': '2023-07-01', 'end': '2023-12-31', 'Simples': -0.0121, 'Bi-Horario': {'Vazio':-0.0349, 'Cheio': -0.0005}, 'Tri-Horario': {'Vazio':-0.0349, 'Cheio':-0.0232, 'Ponta':0.0818} },
+ENERGY_TAR_PERIODS = [
+    {'start': '2024-01-01', 'end': '2024-12-31', 'Simples': 0.0365, 'Bi-Horario': {'Vazio':0.0092, 'Cheio': 0.0502}, 'Tri-Horario': {'Vazio':0.0092, 'Cheio':0.0237, 'Ponta':0.1511} }
+    #{'start': '2023-01-01', 'end': '2023-06-30', 'Simples': -0.0958, 'Bi-Horario': {'Vazio':-0.1185, 'Cheio': -0.0842}, 'Tri-Horario': {'Vazio':-0.1185, 'Cheio':-0.1069, 'Ponta':-0.0018} },
+    #{'start': '2023-07-01', 'end': '2023-12-31', 'Simples': -0.0121, 'Bi-Horario': {'Vazio':-0.0349, 'Cheio': -0.0005}, 'Tri-Horario': {'Vazio':-0.0349, 'Cheio':-0.0232, 'Ponta':0.0818} },
 ]
 
 
@@ -322,7 +322,7 @@ class EnergyCosts():
         last_valid_data = loss_profile_data.loc[last_valid_index]
 
         # Profile formula:  ((1+BT) x (1+MT) x (1+AT) x (1+ATRNT)) -1
-        loss = ((1 + last_valid_data['BT']) * (1 + last_valid_data['MT']) * (1 + last_valid_data['AT']) * (1 + last_valid_data['ATRNT'])) - 1
+        loss = ((1 + last_valid_data['BT']) * (1 + last_valid_data['MT']) * (1 + last_valid_data['AT'])) - 1
 
         loss_date = last_valid_data.name
 
@@ -341,7 +341,7 @@ class EnergyCosts():
         period_df = loss_profile_data.loc[start_date:end_date].copy ()
 
         # Add columns for "Vazio", "Cheio" or "Ponta" considering Energy = 1 
-        period_df['Total_Loss'] = ((1 + period_df['BT']) * (1 + period_df['MT']) * (1 + period_df['AT']) * (1 + period_df['ATRNT'])) - 1
+        period_df['Total_Loss'] = ((1 + period_df['BT']) * (1 + period_df['MT']) * (1 + period_df['AT'])) - 1
         period_df[['Vazio', 'Cheio', 'Ponta', 'TAR']] = period_df.apply(lambda row: self.add_columns_energy_by_period(row, column_name='Total_Loss'), axis=1)
 
         fv_sum =  period_df[ ['Cheio', 'Ponta']].sum().sum()
@@ -466,7 +466,7 @@ class EnergyCosts():
         loss_df = loss_profile_table.loc[start_date:end_date].copy()
 
         # Calculate "Total Loss" column
-        loss_df['Total_Loss'] = ((1 + loss_df['BT']) * (1 + loss_df['MT']) * (1 + loss_df['AT']) * (1 + loss_df['ATRNT'])) - 1
+        loss_df['Total_Loss'] = ((1 + loss_df['BT']) * (1 + loss_df['MT']) * (1 + loss_df['AT'])) - 1
         
         if (loss_df.index.is_unique == False):
             # If there's duplicates in the index, consider only the first and remove the others;

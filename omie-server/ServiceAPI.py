@@ -30,8 +30,8 @@ else:
 OMIE_PATH           = os.path.join(BASE_PATH,   'OMIE_Data/')
 CONSUMOS_PATH       = os.path.join(BASE_PATH,   'Consumos/')
 EREDES_PATH         = os.path.join(BASE_PATH,   'ERedes_profiles/')
-GLOBAL_PROFILE_FILE = os.path.join(EREDES_PATH, 'ERSE_perfis_de_consumo_2023_novembro.xlsx')
-LOSS_PROFILE_FILE   = os.path.join(EREDES_PATH, 'E-REDES_Perfil_Perdas_2023_novembro.xlsx')
+GLOBAL_PROFILE_FILE = os.path.join(EREDES_PATH, 'E-REDES_Perfil_Consumo_Injecao_2024.xlsx')
+LOSS_PROFILE_FILE   = os.path.join(EREDES_PATH, 'Perfis_Perdas_E-REDES_2024_0.xlsx')
 
 ###################  FLASK INIT  ############################
 # Configure caching
@@ -187,7 +187,7 @@ def initialize_app():
     check_and_download_OMIE ()
 
     # Calc the Master Prices Table
-    energy_cost = EnergyCosts('Bi-Horario-Semanal', 2023, 'coopernico-base', 1, 'BTN-C' )
+    energy_cost = EnergyCosts('Bi-Horario-Semanal', 2024, 'coopernico-base', 1, 'BTN-C' )
     data_ingest.master_prices_table = energy_cost.calc_master_table (data_ingest.profile_data, data_ingest.profile_loss_data, data_ingest.omie_data, 'Price_PT')
     energy_cost.setMasterPrices(data_ingest.master_prices_table)
 
